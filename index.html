@@ -3,70 +3,99 @@
   <head>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend&family=Open+Sans&display=swap">
     <style>
-      h1 {
-        font-family: 'Lexend', sans-serif;
-        margin-bottom: 10px;
-      }
-      p {
-        font-family: 'Open Sans', sans-serif;
-        font-size: 16px;
-      }
-      body {
-        margin-left: 20px;
-        background-image: url("images/bcone.jpg");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-      }
+        h1 {
+            font-family: 'Lexend', sans-serif;
+            margin-bottom: 10px;
+        }
 
-      .title-header,
-      .defaultBox {
-        opacity: 0;
-        transition: all 1s ease-out;
-      }
+        p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+        }
 
-      .title-header.animate {
-        transform: translateY(0);
-        opacity: 1;
-      }
+        body {
+            margin-left: 20px;
+            background-image: url("images/bcone.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
 
-      .defaultBox.animate {
-        transform: translateX(0);
-        opacity: 1;
-      }
+        .title-header,
+        .defaultBox {
+            opacity: 0;
+            transition: all 1s ease-out;
+        }
 
-      .title-header {
-        padding: 10px 20px;
-        color: white;
-        background: rgba(0, 255, 255, 0.6);
-        border-radius: 12px;
-        display: inline-block;
-        transform: translateY(-30px);
-      }
+        .title-header.animate {
+            transform: translateY(0);
+            opacity: 1;
+        }
 
-      .defaultBox {
-        width: 600px;
-        padding: 8px 16px;
-        color: white;
-        background: rgba(0, 255, 255, 0.6);
-        border-radius: 12px;
-        display: block;
-        transform: translateX(-30px);
-        white-space: normal;
-        text-align: left;
-        line-height: 1.4;
-        box-sizing: border-box;
-        margin-top: 12px;
-      }
+        .defaultBox.animate {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .title-header {
+            padding: 10px 20px;
+            color: white;
+            background: rgba(0, 255, 255, 0.6);
+            border-radius: 12px;
+            display: inline-block;
+            transform: translateY(-30px);
+        }
+
+        .defaultBox {
+            width: 600px;
+            padding: 8px 16px;
+            color: white;
+            background: rgba(0, 255, 255, 0.6);
+            border-radius: 12px;
+            display: block;
+            transform: translateX(-30px);
+            white-space: normal;
+            text-align: left;
+            line-height: 1.4;
+            box-sizing: border-box;
+            margin-top: 12px;
+        }
+
+        .content-row {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            margin-bottom: 40px;
+        }
+
+        .text-column {
+            flex: 1;
+        }
+
+        .image-column img {
+            width: 500px;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
     </style>
     <title>Snake's Nest</title>
   </head>
   <body>
     <h1 class="title-header">Snake's Nest</h1>
-    <p class="defaultBox">Oh! You're here! I... didn't exactly expect anyone to come here...<br>Anyways, let me show you around!</p>
-    <p class="defaultBox">First, this is the <i>Entrance</i>, which is the starting point of your journey here in the <b>Nest.</b></b></p>
-    <p class="defaultBox">The <b>Nest</b> is a small personal project I made to express things that I want in this website!</p>
-    <p class="defaultBox">There's nothing much here right now, but I guess you can look around if you'd like.</p>
+
+    <div class="content-row">
+      <div class="text-column">
+        <p class="defaultBox">Oh! You're here! I... didn't exactly expect anyone to come here...<br>Anyways, let me show you around!</p>
+        <p class="defaultBox">First, this is the <i>Entrance</i>, which is the starting point of your journey here in the <b>Nest.</b></p>
+        <p class="defaultBox">The <b>Nest</b> is a small personal project I made to express things that I want in this website!</p>
+        <p class="defaultBox">There's nothing much here right now, but I guess you can look around if you'd like.</p>
+      </div>
+      <div class="image-column">
+        <img src="images/example.jpg" alt="Nest Image" />
+      </div>
+    </div>
+
     <script>
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
