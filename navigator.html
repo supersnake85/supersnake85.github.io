@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend&family=Open+Sans&display=swap">
+    <style>
+        body {
+            margin-left: 20px;
+            background-image: url("images/bcone.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        h1 {
+            font-family: 'Lexend', sans-serif;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+        }
+
+        .title-header,
+        .defaultBox {
+            opacity: 0;
+            transition: all 1s ease-out;
+        }
+
+        .title-header.animate {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .defaultBox.animate {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .title-header {
+            padding: 10px 20px;
+            color: white;
+            background: rgba(0, 255, 255, 0.6);
+            border-radius: 12px;
+            display: inline-block;
+            transform: translateY(-30px);
+        }
+
+        .defaultBox {
+            width: 600px;
+            padding: 8px 16px;
+            color: white;
+            background: rgba(0, 255, 255, 0.6);
+            border-radius: 12px;
+            display: block;
+            transform: translateX(-30px);
+            white-space: normal;
+            text-align: left;
+            line-height: 1.4;
+            box-sizing: border-box;
+            margin-top: 12px;
+        }
+    </style>
+    <title>Snake's Nest</title>
+  </head>
+  <body>
+    <h1 class="title-header">Snake's Nest - Navigator</h1>
+
+    <p class="defaultBox">Welcome to the <strong>Navigator</strong>, where are your navigation needs are met.</p>
+
+    <script>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            entry.target.classList.add('animate');
+          }
+        });
+      }, { threshold: 0.2 });
+
+      document.querySelectorAll('.title-header, .defaultBox').forEach(el => {
+        observer.observe(el);
+      });
+    </script>
+  </body>
+</html>
