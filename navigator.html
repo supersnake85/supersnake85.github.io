@@ -60,13 +60,26 @@
             box-sizing: border-box;
             margin-top: 12px;
         }
+        .title-header {
+            font-family: 'Lexend', sans-serif;
+            margin-bottom: 10px;
+        }
+
+        .title-link {
+            color: inherit;           /* keep the same text color as h1 */
+            text-decoration: none;    /* remove underline */
+            display: inline-block;    /* ensures padding/margin works like h1 text */
+        }
     </style>
     <title>Snake's Nest</title>
   </head>
   <body>
-    <h1 class="title-header">Snake's Nest - Navigator</h1>
+    <h1 class="title-header">
+      <a href="https://supersnake85.github.io" class="title-link">Snake's Nest - Navigator</a>
+    </h1>
 
-    <p class="defaultBox">Welcome to the <strong>Navigator</strong>, where are your navigation needs are met.</p>
+    <p class="defaultBox">Welcome to the <strong>Navigator</strong>, where all your navigation needs are met.</p>
+    <p class="defaultBox"><span style="font-size:25px;">Main Navigator</span><br>The main navigator menu, perfect for accessing everything quickly!</p>
 
     <script>
       const observer = new IntersectionObserver((entries) => {
