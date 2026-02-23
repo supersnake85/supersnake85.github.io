@@ -18,51 +18,70 @@
         background-position: center;
         background-repeat: no-repeat;
       }
+
+      .title-header,
+      .defaultBox {
+        opacity: 0;
+        transition: all 1s ease-out;
+      }
+
+      .title-header.animate {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .defaultBox.animate {
+        transform: translateX(0);
+        opacity: 1;
+      }
+
       .title-header {
         padding: 10px 20px;
         color: white;
         background: rgba(0, 255, 255, 0.6);
         border-radius: 12px;
         display: inline-block;
-        opacity: 0;
         transform: translateY(-30px);
-        animation: fadeInTop 1s ease-out forwards;
       }
-      @keyframes fadeInTop {
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
+
       .defaultBox {
-          width: 600px;
-          padding: 8px 16px;
-          color: white;
-          background: rgba(0, 255, 255, 0.6);
-          border-radius: 12px;
-          display: block;
-          opacity: 0;
-          transform: translateX(-30px);
-          animation: fadeInLeft 1s ease-out forwards;
-          white-space: normal;
-          overflow-wrap: normal;
-          text-align: left;
-          line-height: 1.4;
-          box-sizing: border-box;
-      }
-      @keyframes fadeInLeft {
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
+        width: 600px;
+        padding: 8px 16px;
+        color: white;
+        background: rgba(0, 255, 255, 0.6);
+        border-radius: 12px;
+        display: block;
+        transform: translateX(-30px);
+        white-space: normal;
+        text-align: left;
+        line-height: 1.4;
+        box-sizing: border-box;
+        margin-top: 12px;
       }
     </style>
     <title>Snake's Nest</title>
   </head>
   <body>
-    <h1 class="title-header">
-  Snake's Nest
-</h1>
+    <h1 class="title-header">Snake's Nest</h1>
+
     <p class="defaultBox">Oh! You're here! I... didn't exactly expect anyone to come here...<br>Anyways, let me show you around!</p>
+
+    <p class="defaultBox">First, this is the <i>Entrance</i>, which is the starting point of your journey here in the <b>Nest.</b></b></p>
+    
+    <p class="defaultBox">The <b>Nest</b> is a small personal project I made to express things that I want in this website!</p>
+
+    <script>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            entry.target.classList.add('animate');
+          }
+        });
+      }, { threshold: 0.2 });
+
+      document.querySelectorAll('.title-header, .defaultBox').forEach(el => {
+        observer.observe(el);
+      });
+    </script>
   </body>
 </html>
