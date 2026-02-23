@@ -34,6 +34,28 @@
           transform: translateY(0);
         }
       }
+      .defaultBox {
+          width: 600px;
+          padding: 8px 16px;
+          color: white;
+          background: rgba(0, 255, 255, 0.6);
+          border-radius: 12px;
+          display: block;
+          opacity: 0;
+          transform: translateX(-30px);
+          animation: fadeInLeft 1s ease-out forwards;
+          white-space: normal;
+          overflow-wrap: normal;
+          text-align: left;
+          line-height: 1.4;
+          box-sizing: border-box;
+      }
+      @keyframes fadeInLeft {
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
     </style>
     <title>Snake's Nest</title>
   </head>
@@ -41,6 +63,6 @@
     <h1 class="title-header">
   Snake's Nest
 </h1>
-    <p>Placeholder Text</p>
+    <p class="defaultBox">Oh! You're here! I... didn't exactly expect anyone to come here...<br>Anyways, let me show you around!</p>
   </body>
 </html>
